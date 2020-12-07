@@ -3,6 +3,11 @@ var bodyParser = require('body-parser');
 var dataStore = require('nedb');
 
 const expressSwagger = require('express-swagger-generator');
+
+var port = (process.env.PORT || 3000);
+var BASE_API_PATH = "/api/v1";
+var DB_FILE_NAME = __dirname + "/contacts.json";
+
 let options = {
     swaggerDefinition: {
         info: {
@@ -11,10 +16,9 @@ let options = {
             version: '1.0.0',
         },
         host: 'localhost:3000',
-        basePath: '/v1',
+        basePath: BASE_API_PATH,
         produces: [
-            "application/json",
-            "application/xml"
+            "application/json"
         ],
         schemes: ['http', 'https'],
 		securityDefinitions: {
@@ -27,12 +31,10 @@ let options = {
         }
     },
     basedir: __dirname, //app absolute path
-    files: ['./routes/**/*.js'] //Path to the API handle folder
+    files: ['*.js'] //Path to the API handle folder
 };
 
-var port = (process.env.PORT || 3000);
-var BASE_API_PATH = "/api/v1";
-var DB_FILE_NAME = __dirname + "/contacts.json";
+
 
 console.log("Starting API server...")
 

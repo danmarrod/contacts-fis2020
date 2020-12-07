@@ -16,7 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nedb": "^1.8.0",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
     "express-swagger-generator": "^1.1.17"
   }
 }

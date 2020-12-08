@@ -16,7 +16,7 @@ let options = {
             title: 'Swagger',
             version: '1.0.0',
         },
-        host: 'localhost:3000',
+        host: 'fis-contacts.herokuapp.com',
         basePath: BASE_API_PATH,
         produces: [
             "application/json"
